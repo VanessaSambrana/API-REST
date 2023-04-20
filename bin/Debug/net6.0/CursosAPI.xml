@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CursosAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CursosAPI.Controllers.CursoController.AdicionaCurso(CursosAPI.Data.Dtos.CreateCursoDto)">
+            <summary>
+            Adiciona um vídeo/curso ao banco de dados
+            </summary>
+            <param name="cursoDto">Objeto com os campos necessários para a criação de um curso</param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:CursosAPI.Controllers.CursoController.RecuperaCurso(System.Int32,System.Int32)">
+             <summary>
+             Solicita um ou mais recursos de vídeos/cursos ao banco de dados
+             </summary>
+             <param name="skip">Retorna o mínimo de vídeos de curso que existir</param>
+             <param name="take">Retorna no máximo 50 vídeos de cursos</param>
+             <returns>IEnumerable</returns>
+            <response code="200">Caso a solicitação seja efetiva</response>
+        </member>
+        <member name="M:CursosAPI.Controllers.CursoController.RecuperaCursoPorId(System.Int32)">
+            <summary>
+            Solicita um vídeo/curso ao banco de dados, com base no seu identificador
+            </summary>
+            <param name="id">Parâmetro usado para pesquisa e organização dos vídeos</param>
+            <returns>IActionResult</returns>
+            <response code="200">Caso a solicitação seja efetiva</response>
+        </member>
+        <member name="M:CursosAPI.Controllers.CursoController.AtualizaCurso(System.Int32,CursosAPI.Data.Dtos.UpdateCursoDto)">
+            <summary>
+            Atualiza um vídeo/curso existente no banco, com base no seu identificador, substituindo o anterior
+            </summary>
+            <param name="id">Parâmetro usado para pesquisa e organização dos vídeos</param>
+            <param name="cursoDto">Objeto com os campos necessários para a criação de um curso</param>
+            <returns>IActionResult</returns>
+            <response code="204">No Content</response>
+        </member>
+        <member name="M:CursosAPI.Controllers.CursoController.AtualizaCursoParcial(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{CursosAPI.Data.Dtos.UpdateCursoDto})">
+            <summary>
+            Atualiza parcialmento um elemento do vídeo/curso existente, sem alterar todas as outras propriedades
+            </summary>
+            <param name="id">Parâmetro usado para pesquisa e organização dos vídeos</param>
+            <param name="patch">Verbo usado em API REST para atualizar seletivamente uma parte de uma entidade</param>
+            <returns>IActinonResult</returns>
+            <response code="204">No Content</response>
+        </member>
+        <member name="M:CursosAPI.Controllers.CursoController.DeletaCurso(System.Int32)">
+            <summary>
+            Remove um vídeo/curso já existente no banco de dados
+            </summary>
+            <param name="id">Parâmetro usado para pesquisa e organização dos vídeos</param>
+            <returns>IActionResult</returns>
+            <response code="204">No Content</response>
+        </member>
+        <member name="T:CursosAPI.Migrations.CrindoTabela">
+            <inheritdoc />
+        </member>
+        <member name="M:CursosAPI.Migrations.CrindoTabela.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CursosAPI.Migrations.CrindoTabela.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CursosAPI.Migrations.CrindoTabela.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
